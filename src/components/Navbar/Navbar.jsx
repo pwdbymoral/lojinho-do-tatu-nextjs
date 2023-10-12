@@ -1,11 +1,9 @@
 import Image from 'next/image'
 import Logo from '../../../assets/img/okay emote.webp'
-import { useState } from "react";
 
 
 
-export default function () {
-    const [isNavOpen, setIsNavOpen] = useState(false);
+export default function Navbar() {
     return (
         <div className='bg-green-500'>
             <div className='container px-4 mx-auto flex flex-row items-center justify-between'>
