@@ -11,7 +11,6 @@ export default function ProductCard({ image }) {
                 alt="product image"
                 width={200} 
                 />
-
             </a>
             <div className="px-5 pb-5">
                 <a href="#">
