@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import Logo from '../../assets/img/okay emote.webp'
+import Logo from '../../../assets/img/okay emote.webp'
 import { useState } from "react";
 
 
