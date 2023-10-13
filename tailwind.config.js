@@ -8,6 +8,15 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        'primary': {
+          100: '#C2EAAD',
+          200: '#CEEE85',
+          300: '#4FC263',
+          DEFAULT: '#5DB53F',
+          400: '#92A762'
+        },
+      },
       fontFamily: {
         'title': 'Montserrat, sans-serif',
       },
