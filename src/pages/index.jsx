@@ -3,6 +3,7 @@ import Banner from '@/components/Banner/Banner'
 import ProdutosEmDestaque from '@/components/ProdutosEmDestaque/ProdutosEmDestaque'
 import ProdutosComDesconto from '@/components/ProdutosComDesconto/ProdutosComDesconto'
 import Footer from '@/components/Footer/Footer'
+import Link from 'next/link'
 
 
 export default function Home() {
@@ -12,9 +13,13 @@ export default function Home() {
             <Banner />
             <ProdutosEmDestaque />
             <ProdutosComDesconto />
-            
+
             <div className="flex container justify-center mx-auto">
-                <a href="/produtos" className='button text-md bg-primary lg:hover:bg-primary-300 rounded-full px-4 py-2 mb-4'>Veja todos os produtos</a>
+                <button className='button text-md bg-primary lg:hover:bg-primary-300 rounded-full px-4 py-2 mb-4'>
+                    <Link href="/produtos">
+                        Veja todos os produtos
+                    </Link>
+                </button>
             </div>
 
             <Footer />

@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Logo from '../../../assets/img/okay emote.webp'
+import Link from 'next/link'
 
 
 
@@ -15,9 +16,11 @@ export default function Navbar() {
                 </div>
 
                 <nav className='space-x-4 justify-end'>
-                    <a className='text-lg text-lime-900 hover:text-gray-900' href='/' aria-current='page'>Home</a>
-                    <a className='text-lg text-lime-900 hover:text-gray-900' href='/produtos'>Produtos</a>
-                    <a className='text-lg text-lime-900 hover:text-gray-900' href='#'>Contato</a>
+
+
+                    <Link href='/' className="text-lg text-lime-900 hover:text-gray-900">Home</Link>
+                    <Link href='/produtos' className="text-lg text-lime-900 hover:text-gray-900">Produtos</Link>
+                    <Link href='/' className="text-lg text-lime-900 hover:text-gray-900">Contato</Link>
                 </nav>
             </div>
             <div className='container mx-auto px-8 pb-4'>
