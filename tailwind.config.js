@@ -9,18 +9,18 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'primary': {
+        primary: {
           100: '#C2EAAD',
           200: '#CEEE85',
           300: '#4FC263',
           DEFAULT: '#5DB53F',
-          400: '#92A762'
+          400: '#92A762',
         },
       },
       fontFamily: {
-        'title': 'Montserrat, sans-serif',
+        title: 'Montserrat, sans-serif',
       },
     },
   },
   plugins: [],
-}
+};
