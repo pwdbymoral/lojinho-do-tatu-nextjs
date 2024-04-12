@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Barraca de Acampamento",
+    "price": 75.0
+  },
+  {
+    "id": 2,
+    "name": "Lápide",
+    "price": 1300.0
+  },
+  {
+    "id": 3,
+    "name": "Óculos Espelhado Vermelho",
+    "price": 800.0
+  },
+  {
+    "id": 4,
+    "name": "Robô",
+    "price": 2500.0
+  },
+  {
+    "id": 5,
+    "name": "Par de Luvas Premium",
+    "price": 52.0
+  },
+  {
+    "id": 6,
+    "name": "Bandeira Balenciaga",
+    "price": 4000.0
+  },
+  {
+    "id": 7,
+    "name": "Action Figure Cupcake",
+    "price": 657.99
+  },
+  {
+    "id": 8,
+    "name": "Boia",
+    "price": 30.0
+  }
+]
