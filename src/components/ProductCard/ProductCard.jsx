@@ -4,7 +4,13 @@ export default function ProductCard({ image, name, price, discountPrice }) {
   return (
     <div className="min-w-xs m-2 mx-auto w-full max-w-md rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800">
       <a href="#" className="">
-        <Image className="mx-auto rounded-t-lg p-8" src={image} alt="product image" width={200} />
+        <Image
+          className="mx-auto rounded-t-lg p-8"
+          src={image}
+          alt="product image"
+          width={200}
+          height={200}
+        />
       </a>
       <div className="px-5 pb-5">
         <a href="#">
@@ -63,7 +69,7 @@ export default function ProductCard({ image, name, price, discountPrice }) {
           </span>
         </div>
         <div className="flex items-center justify-between">
-          <span className="text-3xl font-bold text-gray-900 dark:text-white">{price}</span>
+          <span className="text-3xl font-bold text-gray-900 dark:text-white">R${price}</span>
 
           {/* Botão add to cart */}
 
