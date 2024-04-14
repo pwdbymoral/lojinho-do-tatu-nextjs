@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function ProductCard({ image, name, price, discountPrice }) {
   return (
-    <div className="min-w-xs m-2 mx-auto w-full max-w-md rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800">
+    <div className="mx-auto max-h-[334px] w-full max-w-md rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800">
       <a href="#" className="">
         <Image
           className="mx-auto rounded-t-lg p-8"
