@@ -8,19 +8,19 @@ export default function Navbar() {
       <div className="container mx-auto flex flex-row items-center justify-between px-4">
         <div className="flex flex-row items-center space-x-4">
           <Image src={Logo} alt="Rammus Logo" className="h-28 w-auto" />
-          <h1 className="invisible font-title text-3xl font-medium text-lime-900 xl:visible">
+          <h1 className="invisible font-title text-3xl font-medium text-gray-100 xl:visible">
             Lojinho do Tatu
           </h1>
         </div>
 
         <nav className="justify-end space-x-4">
-          <Link href="/" className="text-lg text-lime-900 hover:text-gray-900">
+          <Link href="/" className="text-lg text-gray-100 hover:text-gray-900">
             Home
           </Link>
-          <Link href="/produtos" className="text-lg text-lime-900 hover:text-gray-900">
+          <Link href="/produtos" className="text-lg text-gray-100 hover:text-gray-900">
             Produtos
           </Link>
-          <Link href="/" className="text-lg text-lime-900 hover:text-gray-900">
+          <Link href="/" className="text-lg text-gray-100 hover:text-gray-900">
             Contato
           </Link>
         </nav>
