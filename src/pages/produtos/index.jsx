@@ -1,50 +1,50 @@
-import Navbar from '@/components/Navbar/Navbar';
-import Footer from '@/components/Footer/Footer';
-import BarraCategorias from '@/components/BarraCategorias';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+import CategoryFilter from '@/components/CategoryFilter';
 import { useEffect, useState } from 'react';
 import ProductList from '@/components/ProductList';
 
-const filterProducts = (produtos, categoriaAtiva) => {
-  const produtosFiltrados = produtos.filter(
-    (produto) => produto.tags.includes(categoriaAtiva) || categoriaAtiva === 'Todos os Produtos'
+const filterProducts = (products, selectedCategory) => {
+  const filteredProducts = products.filter(
+    (product) => product.tags.includes(selectedCategory) || selectedCategory === 'Todos os Produtos'
   );
-  return produtosFiltrados;
+  return filteredProducts;
 };
 
 function Produtos() {
-  const [produtos, setProdutos] = useState([]);
-  const [categoriaAtiva, setCategoriaAtiva] = useState('Todos os Produtos');
-  const [categorias, setCategorias] = useState([]);
+  const [products, setProducts] = useState([]);
+  const [selectedCategory, setselectedCategory] = useState('Todos os Produtos');
+  const [categories, setCategories] = useState([]);
 
   //recuperando os produtos com API
   useEffect(() => {
     fetch('/api/products')
       .then((response) => response.json())
       .then((data) => {
-        setProdutos(data);
-        const productTags = data.flatMap((produto) => produto.tags);
+        setProducts(data);
+        const productTags = data.flatMap((product) => product.tags);
         const uniqueTags = new Set(productTags);
-        setCategorias(Array.from(uniqueTags));
+        setCategories(Array.from(uniqueTags));
       });
   }, []);
 
-  const handleCategoryClick = (categoria) => {
-    setCategoriaAtiva(categoria);
+  const handleCategoryClick = (category) => {
+    setselectedCategory(category);
   };
 
-  const produtosFiltrados = filterProducts(produtos, categoriaAtiva);
+  const filteredProducts = filterProducts(products, selectedCategory);
 
   return (
     <div>
       <Navbar />
       <main className="container mx-auto flex min-h-[77vh] flex-col py-4 md:grid md:grid-cols-5 md:divide-x md:divide-gray-400">
-        <BarraCategorias
-          categorias={categorias}
-          categoriaAtiva={categoriaAtiva}
+        <CategoryFilter
+          categories={categories}
+          selectedCategory={selectedCategory}
           onCategoryClick={handleCategoryClick}
         />
 
-        <ProductList products={produtosFiltrados} />
+        <ProductList products={filteredProducts} />
       </main>
       <Footer />
     </div>

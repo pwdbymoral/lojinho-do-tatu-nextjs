@@ -1,12 +1,12 @@
-import ProductCard from '../../components/ProductCard/ProductCard';
+import ProductCard from '../../components/ProductCard';
 
-function ProdutosComDesconto({ produtos }) {
+function SaleProducts({ products }) {
   return (
     <div className="container mx-auto my-4 px-4">
       <span className="text-xl font-semibold">Produtos com desconto</span>
       <div className="grid gap-4 lg:grid-cols-3 xl:grid-cols-4">
-        {produtos.map((produto) => (
-          <ProductCard image={produto.image} name={produto.name} price={produto.price.toFixed(2)} />
+        {products.map((product) => (
+          <ProductCard image={product.image} name={product.name} price={product.price.toFixed(2)} />
         ))}
       </div>
       <div className="flex justify-end">
@@ -18,4 +18,4 @@ function ProdutosComDesconto({ produtos }) {
   );
 }
 
-export default ProdutosComDesconto;
+export default SaleProducts;
