@@ -1,34 +1,51 @@
 import Navbar from '@/components/Navbar/Navbar';
 import Footer from '@/components/Footer/Footer';
-import ProductCard from '@/components/ProductCard/ProductCard';
 import BarraCategorias from '@/components/BarraCategorias';
 import { useEffect, useState } from 'react';
+import ProductList from '@/components/ProductList';
+
+const filterProducts = (produtos, categoriaAtiva) => {
+  const produtosFiltrados = produtos.filter(
+    (produto) => produto.tags.includes(categoriaAtiva) || categoriaAtiva === 'Todos os Produtos'
+  );
+  return produtosFiltrados;
+};
 
 function Produtos() {
   const [produtos, setProdutos] = useState([]);
+  const [categoriaAtiva, setCategoriaAtiva] = useState('Todos os Produtos');
+  const [categorias, setCategorias] = useState([]);
 
+  //recuperando os produtos com API
   useEffect(() => {
     fetch('/api/products')
       .then((response) => response.json())
-      .then((data) => setProdutos(data));
+      .then((data) => {
+        setProdutos(data);
+        const productTags = data.flatMap((produto) => produto.tags);
+        const uniqueTags = new Set(productTags);
+        setCategorias(Array.from(uniqueTags));
+      });
   }, []);
+
+  const handleCategoryClick = (categoria) => {
+    setCategoriaAtiva(categoria);
+  };
+
+  const produtosFiltrados = filterProducts(produtos, categoriaAtiva);
 
   return (
     <div>
       <Navbar />
-      <section className="container mx-auto grid min-h-[77vh] grid-cols-5 divide-x divide-gray-400 py-4">
-        <BarraCategorias />
+      <main className="container mx-auto flex min-h-[77vh] flex-col py-4 md:grid md:grid-cols-5 md:divide-x md:divide-gray-400">
+        <BarraCategorias
+          categorias={categorias}
+          categoriaAtiva={categoriaAtiva}
+          onCategoryClick={handleCategoryClick}
+        />
 
-        <div className="col-span-4 grid grid-cols-3 gap-4 pl-4">
-          {produtos.map((produto) => (
-            <ProductCard
-              image={produto.image}
-              name={produto.name}
-              price={produto.price.toFixed(2)}
-            />
-          ))}
-        </div>
-      </section>
+        <ProductList products={produtosFiltrados} />
+      </main>
       <Footer />
     </div>
   );
