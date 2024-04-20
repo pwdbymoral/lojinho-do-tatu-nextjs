@@ -1,9 +1,17 @@
 import Image from 'next/image';
 import { Product } from '@/models/product.interface';
+import React from 'react';
 
-export default function ProductCard({ product }: { product: Product }) {
+interface ProductCardProps {
+  product: Product;
+}
+
+const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   return (
-    <div className="mx-auto max-h-[334px] w-full max-w-md rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800">
+    <div
+      key={product.id}
+      className="mx-auto max-h-[334px] w-full max-w-md rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800"
+    >
       <a href="#" className="">
         <Image
           className="mx-auto rounded-t-lg p-8"
@@ -81,4 +89,6 @@ export default function ProductCard({ product }: { product: Product }) {
       </div>
     </div>
   );
-}
+};
+
+export default ProductCard;

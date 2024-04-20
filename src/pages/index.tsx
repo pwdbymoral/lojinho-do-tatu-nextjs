@@ -5,14 +5,22 @@ import Banner from '@/components/Banner';
 import PopularProducts from '@/components/PopularProducts';
 import SaleProducts from '@/components/SaleProducts';
 import Footer from '@/components/Footer';
+import { Product } from '@/models/product.interface';
 
-export default function Home() {
-  const [products, setProducts] = useState([]);
+const Home: React.FC = () => {
+  const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
-    fetch('/api/products')
-      .then((response) => response.json())
-      .then((data) => setProducts(data));
+    const fetchData = async () => {
+      try {
+        const response = await fetch('/api/products');
+        const data: Product[] = await response.json();
+        setProducts(data);
+      } catch (error) {
+        console.error('Error fetching products:', error);
+      }
+    };
+    fetchData();
   }, []);
 
   return (
@@ -33,4 +41,6 @@ export default function Home() {
       <Footer />
     </main>
   );
-}
+};
+
+export default Home;
