@@ -1,12 +1,13 @@
 import Image from 'next/image';
+import { Product } from '@/models/product.interface';
 
-export default function ProductCard({ image, name, price, discountPrice }) {
+export default function ProductCard({ product }: { product: Product }) {
   return (
     <div className="mx-auto max-h-[334px] w-full max-w-md rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800">
       <a href="#" className="">
         <Image
           className="mx-auto rounded-t-lg p-8"
-          src={image}
+          src={product.image}
           alt="product image"
           width={200}
           height={200}
@@ -15,7 +16,7 @@ export default function ProductCard({ image, name, price, discountPrice }) {
       <div className="px-5 pb-5">
         <a href="#">
           <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-            {name}
+            {product.name}
           </h5>
         </a>
         <div className="mb-5 mt-2.5 flex items-center">
@@ -69,7 +70,9 @@ export default function ProductCard({ image, name, price, discountPrice }) {
           </span>
         </div>
         <div className="flex items-center justify-between">
-          <span className="text-3xl font-bold text-gray-900 dark:text-white">R${price}</span>
+          <span className="text-3xl font-bold text-gray-900 dark:text-white">
+            R${product.price.toFixed(2)}
+          </span>
 
           {/* Botão add to cart */}
 
