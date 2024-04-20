@@ -1,8 +1,9 @@
+import React from 'react';
 import Image from 'next/image';
 import Logo from '../../../assets/img/okay emote.webp';
 import Link from 'next/link';
 
-export default function Navbar() {
+const Navbar: React.FC = () => {
   return (
     <div className="bg-primary">
       <div className="container mx-auto flex flex-col items-center justify-center md:flex-row md:justify-between md:px-4">
@@ -42,4 +43,6 @@ export default function Navbar() {
       </div>
     </div>
   );
-}
+};
+
+export default Navbar;

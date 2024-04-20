@@ -1,6 +1,9 @@
-function Banner() {
+import React from 'react';
+
+const Banner: React.FC = () => {
   const bannerurl =
     'https://i.pinimg.com/564x/a7/bc/da/a7bcda822f7d1ca55f1ec88a1bcf90ee.jpg';
+
   return (
     <div
       className="flex h-[300px] items-end bg-cover bg-local bg-center bg-no-repeat bg-origin-border"
@@ -18,6 +21,6 @@ function Banner() {
       </div>
     </div>
   );
-}
+};
 
 export default Banner;

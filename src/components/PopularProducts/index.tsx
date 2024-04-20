@@ -1,13 +1,18 @@
+import React from 'react';
 import ProductCard from '../../components/ProductCard';
 import { Product } from '@/models/product.interface';
 
-export default function PopularProducts({ products }: { products: Product[] }) {
+interface PopularProductsProps {
+  products: Product[];
+}
+
+const PopularProducts: React.FC<PopularProductsProps> = ({ products }) => {
   return (
     <div className="container mx-auto my-4 px-4">
       <span className="text-xl font-semibold">Produtos em destaque</span>
       <div className="grid gap-4 lg:grid-cols-3 xl:grid-cols-4">
         {products.map((produto) => (
-          <ProductCard key={produto.id} product={produto} />
+          <ProductCard product={produto} />
         ))}
       </div>
       <div className="flex justify-end">
@@ -20,4 +25,6 @@ export default function PopularProducts({ products }: { products: Product[] }) {
       </div>
     </div>
   );
-}
+};
+
+export default PopularProducts;

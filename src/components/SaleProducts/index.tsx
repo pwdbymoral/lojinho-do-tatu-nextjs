@@ -1,7 +1,12 @@
+import React from 'react';
 import ProductCard from '../../components/ProductCard';
 import { Product } from '@/models/product.interface';
 
-function SaleProducts({ products }: { products: Product[] }) {
+interface SaleProductsProps {
+  products: Product[];
+}
+
+const SaleProducts: React.FC<SaleProductsProps> = ({ products }) => {
   return (
     <div className="container mx-auto my-4 px-4">
       <span className="text-xl font-semibold">Produtos com desconto</span>
@@ -20,6 +25,6 @@ function SaleProducts({ products }: { products: Product[] }) {
       </div>
     </div>
   );
-}
+};
 
 export default SaleProducts;

@@ -1,16 +1,18 @@
+import React from 'react';
 import RammusFooter from '@/../assets/img/rammus footer.png';
 import Image from 'next/image';
-import React from 'react';
 
-export default function CategoryFilter({
-  categories,
-  selectedCategory,
-  onCategoryClick,
-}: {
+interface CategoryFilterProps {
   categories: string[];
   selectedCategory: string;
   onCategoryClick: (category: string) => void;
-}) {
+}
+
+const CategoryFilter: React.FC<CategoryFilterProps> = ({
+  categories,
+  selectedCategory,
+  onCategoryClick,
+}) => {
   return (
     <section className="mx-8 flex max-w-md flex-col items-center p-4 md:mx-0 md:max-w-none lg:mr-4">
       <Image
@@ -59,4 +61,6 @@ export default function CategoryFilter({
       </div>
     </section>
   );
-}
+};
+
+export default CategoryFilter;

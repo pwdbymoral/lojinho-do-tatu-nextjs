@@ -1,18 +1,21 @@
-function Footer() {
+import Link from 'next/link';
+import React from 'react';
+
+const Footer: React.FC = () => {
   return (
     <footer className="bg-primary py-4 text-center">
       <p className="mt-3 text-white">
         &copy; 2023 -{' '}
-        <a
+        <Link
           className="lg:hover:underline"
           target="_blank"
           href="https://github.com/pwdbymoral"
         >
           pwdbymoral
-        </a>
+        </Link>
       </p>
     </footer>
   );
-}
+};
 
 export default Footer;

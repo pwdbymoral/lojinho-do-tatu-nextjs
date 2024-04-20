@@ -1,8 +1,8 @@
+import React, { useEffect, useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import CategoryFilter from '@/components/CategoryFilter';
-import { useEffect, useState } from 'react';
 import ProductList from '@/components/ProductList';
+import CategoryFilter from '@/components/CategoryFilter';
 import { Product } from '@/models/product.interface';
 
 const filterProducts = (products: Product[], selectedCategory: string) => {
@@ -14,21 +14,28 @@ const filterProducts = (products: Product[], selectedCategory: string) => {
   return filteredProducts;
 };
 
-function Produtos() {
-  const [products, setProducts] = useState([]);
-  const [selectedCategory, setselectedCategory] = useState('Todos os Produtos');
-  const [categories, setCategories] = useState([]);
+const Produtos: React.FC = () => {
+  const [categories, setCategories] = useState<string[]>([]);
+  const [selectedCategory, setselectedCategory] =
+    useState<string>('Todos os Produtos');
+  const [products, setProducts] = useState<Product[]>([]);
 
-  //recuperando os produtos com API
   useEffect(() => {
-    fetch('/api/products')
-      .then((response) => response.json())
-      .then((data) => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('../api/products');
+        const data: Product[] = await response.json();
         setProducts(data);
-        const productTags = data.flatMap((product: Product) => product.tags);
+        const productTags: Array<string> = data.flatMap(
+          (product: Product) => product.tags
+        );
         const uniqueTags = new Set(productTags);
         setCategories(Array.from(uniqueTags));
-      });
+      } catch (error) {
+        console.error('Error fetching products:', error);
+      }
+    };
+    fetchData();
   }, []);
 
   const handleCategoryClick = (category: string) => {
@@ -52,6 +59,6 @@ function Produtos() {
       <Footer />
     </div>
   );
-}
+};
 
 export default Produtos;
