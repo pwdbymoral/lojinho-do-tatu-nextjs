@@ -1,15 +1,21 @@
 import RammusFooter from '@/../assets/img/rammus footer.png';
 import Image from 'next/image';
+import React from 'react';
 
 export default function CategoryFilter({
   categories,
   selectedCategory,
   onCategoryClick,
+}: {
+  categories: string[];
+  selectedCategory: string;
+  onCategoryClick: (category: string) => void;
 }) {
   return (
     <section className="mx-8 flex max-w-md flex-col items-center p-4 md:mx-0 md:max-w-none lg:mr-4">
       <Image
         src={RammusFooter}
+        alt="Rammus"
         width={200}
         className="hidden pb-2 pr-2 md:block"
       />
@@ -17,7 +23,11 @@ export default function CategoryFilter({
         Categorias
       </h2>
       <div className="w-full space-y-2 overflow-auto">
-        <div onClick={() => onCategoryClick('Todos os Produtos')}>
+        <div
+          onClick={() => {
+            onCategoryClick('Todos os Produtos');
+          }}
+        >
           <span
             className={
               selectedCategory === 'Todos os Produtos'
@@ -29,7 +39,12 @@ export default function CategoryFilter({
           </span>
         </div>
         {categories.map((category) => (
-          <div onClick={() => onCategoryClick(category)}>
+          <div
+            key={category}
+            onClick={() => {
+              onCategoryClick(category);
+            }}
+          >
             <span
               className={
                 selectedCategory === category

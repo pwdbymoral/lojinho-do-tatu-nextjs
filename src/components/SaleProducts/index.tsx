@@ -1,16 +1,13 @@
 import ProductCard from '../../components/ProductCard';
+import { Product } from '@/models/product.interface';
 
-function SaleProducts({ products }) {
+function SaleProducts({ products }: { products: Product[] }) {
   return (
     <div className="container mx-auto my-4 px-4">
       <span className="text-xl font-semibold">Produtos com desconto</span>
       <div className="grid gap-4 lg:grid-cols-3 xl:grid-cols-4">
         {products.map((product) => (
-          <ProductCard
-            image={product.image}
-            name={product.name}
-            price={product.price.toFixed(2)}
-          />
+          <ProductCard key={product.id} product={product} />
         ))}
       </div>
       <div className="flex justify-end">

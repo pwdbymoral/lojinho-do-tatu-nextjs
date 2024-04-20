@@ -3,8 +3,9 @@ import Footer from '@/components/Footer';
 import CategoryFilter from '@/components/CategoryFilter';
 import { useEffect, useState } from 'react';
 import ProductList from '@/components/ProductList';
+import { Product } from '@/models/product.interface';
 
-const filterProducts = (products, selectedCategory) => {
+const filterProducts = (products: Product[], selectedCategory: string) => {
   const filteredProducts = products.filter(
     (product) =>
       product.tags.includes(selectedCategory) ||
@@ -24,13 +25,13 @@ function Produtos() {
       .then((response) => response.json())
       .then((data) => {
         setProducts(data);
-        const productTags = data.flatMap((product) => product.tags);
+        const productTags = data.flatMap((product: Product) => product.tags);
         const uniqueTags = new Set(productTags);
         setCategories(Array.from(uniqueTags));
       });
   }, []);
 
-  const handleCategoryClick = (category) => {
+  const handleCategoryClick = (category: string) => {
     setselectedCategory(category);
   };
 
