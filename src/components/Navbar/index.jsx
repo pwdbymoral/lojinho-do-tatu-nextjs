@@ -5,27 +5,36 @@ import Link from 'next/link';
 export default function Navbar() {
   return (
     <div className="bg-primary">
-      <div className="container mx-auto flex flex-row items-center justify-between px-4">
-        <div className="flex flex-row items-center space-x-4">
+      <div className="container mx-auto flex flex-col items-center justify-center md:flex-row md:justify-between md:px-4">
+        <div className="mb-2 flex w-full flex-col items-center space-x-4 md:flex-row">
           <Image src={Logo} alt="Rammus Logo" className="h-28 w-auto" />
-          <h1 className="invisible font-title text-3xl font-medium text-gray-100 xl:visible">
+          <h1 className="font-title text-3xl font-medium text-gray-100">
             Lojinho do Tatu
           </h1>
         </div>
 
-        <nav className="justify-end space-x-4">
-          <Link href="/" className="text-lg text-gray-100 hover:text-gray-900">
+        <nav className="flex w-full justify-around divide-x-[1px] divide-gray-200 bg-green-700 md:block md:w-auto md:justify-between md:space-x-4 md:space-y-0 md:divide-x-0 md:bg-inherit">
+          <Link
+            href="/"
+            className=" w-full py-2 text-center text-lg text-gray-100 hover:text-gray-900 md:inline"
+          >
             Home
           </Link>
-          <Link href="/produtos" className="text-lg text-gray-100 hover:text-gray-900">
+          <Link
+            href="/produtos"
+            className="w-full py-2 text-center text-lg text-gray-100 hover:text-gray-900"
+          >
             Produtos
           </Link>
-          <Link href="/" className="text-lg text-gray-100 hover:text-gray-900">
+          <Link
+            href="/"
+            className="w-full py-2 text-center text-lg text-gray-100 hover:text-gray-900"
+          >
             Contato
           </Link>
         </nav>
       </div>
-      <div className="container mx-auto px-8 pb-4">
+      <div className="container mx-auto mt-4 px-8 pb-4">
         <input
           className="w-full rounded-lg px-4 py-2"
           placeholder="O que você está buscando?"
