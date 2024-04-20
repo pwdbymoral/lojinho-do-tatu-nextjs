@@ -6,7 +6,9 @@ import ProductList from '@/components/ProductList';
 
 const filterProducts = (products, selectedCategory) => {
   const filteredProducts = products.filter(
-    (product) => product.tags.includes(selectedCategory) || selectedCategory === 'Todos os Produtos'
+    (product) =>
+      product.tags.includes(selectedCategory) ||
+      selectedCategory === 'Todos os Produtos'
   );
   return filteredProducts;
 };
