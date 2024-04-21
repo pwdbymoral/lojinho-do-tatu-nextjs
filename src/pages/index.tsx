@@ -10,6 +10,7 @@ import { Product } from '@/models/product.interface';
 const Home: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
 
+  // Using useEffect hook to fetch data when the component mounts
   useEffect(() => {
     const fetchData = async () => {
       try {
