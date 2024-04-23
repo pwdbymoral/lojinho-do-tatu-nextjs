@@ -14,7 +14,7 @@ const filterProducts = (products: Product[], selectedCategory: string) => {
   return filteredProducts;
 };
 
-const Produtos: React.FC = () => {
+const Products: React.FC = () => {
   const [categories, setCategories] = useState<string[]>([]);
   const [selectedCategory, setselectedCategory] =
     useState<string>('Todos os Produtos');
@@ -61,4 +61,4 @@ const Produtos: React.FC = () => {
   );
 };
 
-export default Produtos;
+export default Products;

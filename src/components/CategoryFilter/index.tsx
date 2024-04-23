@@ -8,6 +8,9 @@ interface CategoryFilterProps {
   onCategoryClick: (category: string) => void;
 }
 
+/**
+ * Represents a Category Filter component.
+ */
 const CategoryFilter: React.FC<CategoryFilterProps> = ({
   categories,
   selectedCategory,
