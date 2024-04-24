@@ -6,8 +6,9 @@
   "extends": [
     "standard-with-typescript",
     "plugin:react/recommended",
+    "plugin:storybook/recommended",
     "prettier",
-    "plugin:storybook/recommended"
+    "next"
   ],
   "parserOptions": {
     "ecmaVersion": "latest",
