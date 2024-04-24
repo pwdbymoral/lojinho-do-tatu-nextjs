@@ -1,6 +1,7 @@
 import { type Meta, StoryObj } from '@storybook/react';
 import ProductList from '.';
 import ProductListProps from '.';
+import { Controls, Description, Primary, Title } from '@storybook/blocks';
 
 const meta = {
   title: 'Components/Products/ProductList',
@@ -53,6 +54,19 @@ const meta = {
         alt: "Caixa rosa com a escrita 'GG' em vermelho",
       },
     ],
+  },
+  tags: ['autodocs'],
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Title />
+          <Description />
+          <Controls />
+          <Primary />
+        </>
+      ),
+    },
   },
 } satisfies Meta<typeof ProductListProps>;
 

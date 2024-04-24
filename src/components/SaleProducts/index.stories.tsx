@@ -1,6 +1,7 @@
 import { type Meta, StoryObj } from '@storybook/react';
 import SaleProducts from '.';
 import SaleProductsProps from '.';
+import { Controls, Description, Primary, Title } from '@storybook/blocks';
 
 const meta = {
   title: 'Components/Products/SaleProducts',
@@ -44,6 +45,19 @@ const meta = {
         alt: "Robô na pose da estátua 'O pensador'",
       },
     ],
+  },
+  tags: ['autodocs'],
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Title />
+          <Description />
+          <Controls />
+          <Primary />
+        </>
+      ),
+    },
   },
 } satisfies Meta<typeof SaleProductsProps>;
 

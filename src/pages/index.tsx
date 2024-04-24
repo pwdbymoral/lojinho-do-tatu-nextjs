@@ -7,10 +7,24 @@ import SaleProducts from '@/components/SaleProducts';
 import Footer from '@/components/Footer';
 import { Product } from '@/models/product.interface';
 
+/**
+ * The Homepage component serves as the main entry point for the application.
+ *
+ * It displays the following elements:
+ *  - Navbar component
+ *  - Banner component
+ *  - Popular Products: Displays a section showcasing 4 popular products using the PopularProducts component.
+ *  - Sale Products: Displays a section showcasing 4 sale products using the SaleProducts component.
+ *  - "Veja todos os produtos" button:  This button links users to the '/produtos' page to view all products.
+ *  - Footer component
+ *
+ * The Homepage component fetches product data from the '/api/products' endpoint using the useEffect hook.
+ * In case of errors, it logs them to the console.
+ *
+ */
 const Home: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
 
-  // Using useEffect hook to fetch data when the component mounts
   useEffect(() => {
     const fetchData = async () => {
       try {

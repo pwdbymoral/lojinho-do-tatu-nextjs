@@ -3,13 +3,24 @@ import RammusFooter from '@/../assets/img/rammus footer.png';
 import Image from 'next/image';
 
 interface CategoryFilterProps {
+  /** An array of categories */
   categories: string[];
+  /** The current selected category */
   selectedCategory: string;
+  /**
+   * A callback function that is called to update the selected category on the
+   * parent component
+   */
   onCategoryClick: (category: string) => void;
 }
 
 /**
- * Represents a Category Filter component.
+ * A component that displays a categories list for filtering.
+ *
+ * In this project, it filters the Products Page. It receives an array of
+ * categories retrieved from the product list, the current selected category and
+ * the onCategoryClick function, which updates the category on the parent
+ * component.
  */
 const CategoryFilter: React.FC<CategoryFilterProps> = ({
   categories,

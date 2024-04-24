@@ -1,9 +1,23 @@
 import { type Meta, StoryObj } from '@storybook/react';
 import Products from '.';
+import { Controls, Description, Primary, Title } from '@storybook/blocks';
 
 const meta = {
   title: 'Pages/Products',
   component: Products,
+  tags: ['autodocs'],
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Title />
+          <Description />
+          <Controls />
+          <Primary />
+        </>
+      ),
+    },
+  },
 } satisfies Meta<typeof Products>;
 
 export default meta;
