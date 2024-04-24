@@ -1,5 +1,6 @@
 import React from 'react';
 
+/** Displays a hero image with text overlay. */
 const Banner: React.FC = () => {
   const bannerurl =
     'https://i.pinimg.com/564x/a7/bc/da/a7bcda822f7d1ca55f1ec88a1bcf90ee.jpg';

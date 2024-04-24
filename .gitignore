@@ -36,3 +36,5 @@ next-env.d.ts
 
 # configs
 .editorconfig
+
+*storybook.log

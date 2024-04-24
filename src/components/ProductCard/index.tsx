@@ -3,9 +3,18 @@ import { Product } from '@/models/product.interface';
 import React from 'react';
 
 interface ProductCardProps {
+  /** The product object containing details to be displayed. */
   product: Product;
 }
 
+/**
+ * A component that displays a single product card.
+ *
+ * This component renders a product card with its image, name, price, and a star
+ * rating.
+ * It's designed to be reusable throughout the application for displaying
+ * product information.
+ */
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   return (
     <div

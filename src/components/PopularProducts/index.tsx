@@ -3,9 +3,19 @@ import ProductCard from '../../components/ProductCard';
 import { Product } from '@/models/product.interface';
 
 interface PopularProductsProps {
+  /**
+   * An array of product objects to be displayed.
+   */
   products: Product[];
 }
 
+/**
+ * A component that displays a list of products.
+ *
+ * In this project, it's used on homepage to display the most popular products.
+ * However, it can be used for displaying any product list with appropriate
+ * data.
+ */
 const PopularProducts: React.FC<PopularProductsProps> = ({ products }) => {
   return (
     <div className="container mx-auto my-4 px-4">

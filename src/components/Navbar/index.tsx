@@ -3,6 +3,13 @@ import Image from 'next/image';
 import Logo from '../../../assets/img/okay emote.webp';
 import Link from 'next/link';
 
+/**
+ * Navbar component display website logo, a  link list to all website pages
+ * and a SearchBar for products.
+ *
+ * This uses Next.js Link component for navigation.
+ * The SearchBar is a work-in-progress.
+ */
 const Navbar: React.FC = () => {
   return (
     <div className="bg-primary">
@@ -22,7 +29,7 @@ const Navbar: React.FC = () => {
             Home
           </Link>
           <Link
-            href="/produtos"
+            href="/products"
             className="w-full py-2 text-center text-lg text-gray-100 hover:text-gray-900"
           >
             Produtos
