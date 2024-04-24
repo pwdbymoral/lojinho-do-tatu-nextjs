@@ -1,6 +1,6 @@
 import { type Meta, StoryObj } from '@storybook/react';
-import ProductCard from '.';
-import ProductCardProps from '.';
+import ProductCard from '../components/ProductCard';
+import ProductCardProps from '../components/ProductCard';
 import { Controls, Description, Primary, Title } from '@storybook/blocks';
 
 const meta = {

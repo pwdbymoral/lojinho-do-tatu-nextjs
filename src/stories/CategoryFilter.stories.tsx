@@ -1,6 +1,6 @@
 import { type Meta, StoryObj } from '@storybook/react';
-import CategoryFilter from '.';
-import CategoryFilterProps from '.';
+import CategoryFilter from '../components/CategoryFilter';
+import CategoryFilterProps from '../components/CategoryFilter';
 import { Controls, Description, Primary, Title } from '@storybook/blocks';
 
 const meta = {

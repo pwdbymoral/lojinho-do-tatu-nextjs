@@ -1,5 +1,5 @@
 import { type Meta, StoryObj } from '@storybook/react';
-import Banner from '.';
+import Banner from '../components/Banner';
 import { Controls, Description, Primary, Title } from '@storybook/blocks';
 
 const meta: Meta<typeof Banner> = {

@@ -1,6 +1,6 @@
 import { type Meta, StoryObj } from '@storybook/react';
-import PopularProducts from '.';
-import PopularProductsProps from '.';
+import PopularProducts from '../components/PopularProducts';
+import PopularProductsProps from '../components/PopularProducts';
 import { Controls, Description, Primary, Title } from '@storybook/blocks';
 
 const meta = {
