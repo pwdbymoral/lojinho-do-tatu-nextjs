@@ -3,9 +3,12 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ProductList from '@/components/ProductList';
 import CategoryFilter from '@/components/CategoryFilter';
-import { Product } from '@/models/product.interface';
+import type { Product } from '@/models/product.interface';
 
-const filterProducts = (products: Product[], selectedCategory: string) => {
+const filterProducts = (
+  products: Product[],
+  selectedCategory: string
+): Product[] => {
   const filteredProducts = products.filter(
     (product) =>
       product.tags.includes(selectedCategory) ||
@@ -37,12 +40,12 @@ const Products: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchData = async (): Promise<void> => {
       try {
         const response = await fetch('../api/products');
         const data: Product[] = await response.json();
         setProducts(data);
-        const productTags: Array<string> = data.flatMap(
+        const productTags: string[] = data.flatMap(
           (product: Product) => product.tags
         );
         const uniqueTags = new Set(productTags);
@@ -51,10 +54,16 @@ const Products: React.FC = () => {
         console.error('Error fetching products:', error);
       }
     };
-    fetchData();
+    fetchData()
+      .then(() => {
+        console.log('Products fetched successfully');
+      })
+      .catch((error) => {
+        console.error('Error fetching products:', error);
+      });
   }, []);
 
-  const handleCategoryClick = (category: string) => {
+  const handleCategoryClick = (category: string): void => {
     setselectedCategory(category);
   };
 

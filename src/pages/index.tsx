@@ -5,7 +5,7 @@ import Banner from '@/components/Banner';
 import PopularProducts from '@/components/PopularProducts';
 import SaleProducts from '@/components/SaleProducts';
 import Footer from '@/components/Footer';
-import { Product } from '@/models/product.interface';
+import type { Product } from '@/models/product.interface';
 
 /**
  * The Homepage component serves as the main entry point for the application.
@@ -26,7 +26,7 @@ const Home: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchData = async (): Promise<void> => {
       try {
         const response = await fetch('/api/products');
         const data: Product[] = await response.json();
@@ -35,7 +35,13 @@ const Home: React.FC = () => {
         console.error('Error fetching products:', error);
       }
     };
-    fetchData();
+    fetchData()
+      .then(() => {
+        console.log('Products fetched successfully');
+      })
+      .catch((error) => {
+        console.error('Error fetching products:', error);
+      });
   }, []);
 
   return (

@@ -1,6 +1,6 @@
 import React from 'react';
 import ProductCard from '../../components/ProductCard';
-import { Product } from '@/models/product.interface';
+import type { Product } from '@/models/product.interface';
 
 interface SaleProductsProps {
   /**

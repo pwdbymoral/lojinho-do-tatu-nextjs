@@ -1,4 +1,4 @@
-import { type Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import Home from '../pages';
 import { Controls, Description, Primary, Title } from '@storybook/blocks';
 

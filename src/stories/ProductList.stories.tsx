@@ -1,6 +1,6 @@
-import { type Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import ProductList from '../components/ProductList';
-import ProductListProps from '../components/ProductList';
+import type ProductListProps from '../components/ProductList';
 import { Controls, Description, Primary, Title } from '@storybook/blocks';
 
 const meta = {

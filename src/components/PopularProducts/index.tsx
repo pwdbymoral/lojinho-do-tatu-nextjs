@@ -1,6 +1,6 @@
 import React from 'react';
 import ProductCard from '../../components/ProductCard';
-import { Product } from '@/models/product.interface';
+import type { Product } from '@/models/product.interface';
 
 interface PopularProductsProps {
   /**
@@ -22,7 +22,7 @@ const PopularProducts: React.FC<PopularProductsProps> = ({ products }) => {
       <span className="text-xl font-semibold">Produtos em destaque</span>
       <div className="grid gap-4 lg:grid-cols-3 xl:grid-cols-4">
         {products.map((produto) => (
-          <ProductCard product={produto} />
+          <ProductCard key={produto.id} product={produto} />
         ))}
       </div>
       <div className="flex justify-end">

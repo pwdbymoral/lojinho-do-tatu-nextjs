@@ -1,4 +1,4 @@
-import { type Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import Banner from '../components/Banner';
 import { Controls, Description, Primary, Title } from '@storybook/blocks';
 
