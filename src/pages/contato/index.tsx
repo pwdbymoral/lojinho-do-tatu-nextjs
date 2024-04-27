@@ -141,6 +141,16 @@ const ContactInfo: React.FC = () => {
   );
 };
 
+/**
+ * The Products page displays a form and contact informations for costumers.
+
+It consists of the following elements:
+
+- Navbar component
+- ContactForm: Displays a form for costumers to send a message to the store.
+- ContactInfo: Displays the store address, phone number and email.
+- Footer component
+ */
 const Contato: React.FC = () => {
   return (
     <div>
