@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import Products from '../pages/products';
+import Products from '../pages/produtos';
 import { Controls, Description, Primary, Title } from '@storybook/blocks';
 
 const meta = {
