@@ -4,16 +4,18 @@ import Footer from '@/components/Footer';
 import ProductList from '@/components/ProductList';
 import CategoryFilter from '@/components/CategoryFilter';
 import type { Product } from '@/models/product.interface';
+import { Category } from '@/models/category.interface';
 
 const filterProducts = (
   products: Product[],
   selectedCategory: string
 ): Product[] => {
-  const filteredProducts = products.filter(
-    (product) =>
-      product.tags.includes(selectedCategory) ||
-      selectedCategory === 'Todos os Produtos'
-  );
+  const filteredProducts = products.filter((product) => {
+    return (
+      selectedCategory === 'Todos os Produtos' ||
+      product.categories.some((category) => category.name === selectedCategory)
+    );
+  });
   return filteredProducts;
 };
 
@@ -34,7 +36,7 @@ const filterProducts = (
  * based on the selected category.
  */
 const Products: React.FC = () => {
-  const [categories, setCategories] = useState<string[]>([]);
+  const [categories, setCategories] = useState<Category[]>([]);
   const [selectedCategory, setselectedCategory] =
     useState<string>('Todos os Produtos');
   const [products, setProducts] = useState<Product[]>([]);
@@ -42,24 +44,23 @@ const Products: React.FC = () => {
   useEffect(() => {
     const fetchData = async (): Promise<void> => {
       try {
-        const response = await fetch('../api/products');
-        const data: Product[] = await response.json();
-        setProducts(data);
-        const productTags: string[] = data.flatMap(
-          (product: Product) => product.tags
-        );
-        const uniqueTags = new Set(productTags);
-        setCategories(Array.from(uniqueTags));
+        const productsResponse = await fetch('../api/products');
+        const products: Product[] = await productsResponse.json();
+        setProducts(products);
+
+        const categoriesResponse = await fetch('../api/categories');
+        const categories: Category[] = await categoriesResponse.json();
+        setCategories(categories);
       } catch (error) {
-        console.error('Error fetching products:', error);
+        console.error('Error fetching data:', error);
       }
     };
     fetchData()
       .then(() => {
-        console.log('Products fetched successfully');
+        console.log('Data fetched successfully');
       })
       .catch((error) => {
-        console.error('Error fetching products:', error);
+        console.error('Error fetching data:', error);
       });
   }, []);
 
