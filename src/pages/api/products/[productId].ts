@@ -1,15 +1,36 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import products from '../../../../data/products.json';
+import prisma from '@/libs/db';
 
-export default function handler(
+export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
-): void {
-  const { productId } = req.query as { productId: string };
-  const product = products.find((p) => p.id === parseInt(productId));
-  if (product != null) {
+): Promise<void> {
+  try {
+    const { productId } = req.query;
+    if (productId == null) {
+      throw new Error('No product ID provided.');
+    }
+    const parsedProductID = parseInt(productId as string, 10);
+    if (isNaN(parsedProductID)) {
+      throw new Error(
+        'Invalid product ID format. Please provide a valid number.'
+      );
+    }
+    const product = await prisma.product.findUnique({
+      where: { id: parsedProductID },
+    });
+    if (product == null) {
+      throw new Error('Unable to find product with the provided ID.');
+    }
     res.status(200).json(product);
-  } else {
-    res.status(404).json({ message: 'Não foi possível encontrar o produto.' });
+  } catch (error: unknown) {
+    console.error(error);
+    if (error instanceof Error) {
+      res.status(500).json({ message: error.message });
+    } else {
+      res
+        .status(500)
+        .json({ message: 'Internal Server Error. Please try again later.' });
+    }
   }
 }

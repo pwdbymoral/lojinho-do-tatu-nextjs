@@ -1,0 +1,26 @@
+// prisma.schema
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["driverAdapters"]
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Product {
+  id       Int      @id @default(autoincrement())
+  name     String   @unique
+  price    Float
+  imageUrl String
+  altText  String
+  categories Category[]
+}
+model Category {
+  id       Int      @id @default(autoincrement())
+  name     String   @unique
+  products Product[]
+}
+

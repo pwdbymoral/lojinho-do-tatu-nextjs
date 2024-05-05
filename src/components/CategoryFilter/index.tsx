@@ -1,10 +1,11 @@
 import React from 'react';
 import RammusFooter from '@/../assets/img/rammus footer.png';
 import Image from 'next/image';
+import { Category } from '@/models/category.interface';
 
 interface CategoryFilterProps {
   /** An array of categories */
-  categories: string[];
+  categories: Category[];
   /** The current selected category */
   selectedCategory: string;
   /**
@@ -56,19 +57,19 @@ const CategoryFilter: React.FC<CategoryFilterProps> = ({
         </div>
         {categories.map((category) => (
           <div
-            key={category}
+            key={category.id}
             onClick={() => {
-              onCategoryClick(category);
+              onCategoryClick(category.name);
             }}
           >
             <span
               className={
-                selectedCategory === category
+                selectedCategory === category.name
                   ? 'cursor-pointer font-semibold'
                   : 'cursor-pointer'
               }
             >
-              {category}
+              {category.name}
             </span>
           </div>
         ))}

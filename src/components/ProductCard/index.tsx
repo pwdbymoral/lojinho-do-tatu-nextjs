@@ -21,8 +21,8 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       <a href="#" className="">
         <Image
           className="mx-auto rounded-t-lg p-8"
-          src={product.image}
-          alt="product image"
+          src={product.imageUrl}
+          alt={product.altText}
           width={200}
           height={200}
         />

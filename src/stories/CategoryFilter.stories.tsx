@@ -26,7 +26,10 @@ type Story = StoryObj<typeof CategoryFilterProps>;
 
 export const Default: Story = {
   args: {
-    categories: ['Brinquedos', 'Decoração'],
+    categories: [
+      { id: 1, name: 'Decoração' },
+      { id: 2, name: 'Equipamento' },
+    ],
     selectedCategory: 'Todos os Produtos',
     onCategoryClick(category) {
       console.log(category);
@@ -34,7 +37,7 @@ export const Default: Story = {
   },
   argTypes: {
     selectedCategory: {
-      options: ['Todos os Produtos', 'Brinquedos', 'Decoração'],
+      options: ['Todos os Produtos', 'Decoração', 'Equipamento'],
       control: {
         type: 'select',
       },

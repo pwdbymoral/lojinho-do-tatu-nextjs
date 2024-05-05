@@ -29,7 +29,7 @@ const Navbar: React.FC = () => {
             Home
           </Link>
           <Link
-            href="/products"
+            href="/produtos"
             className="w-full py-2 text-center text-lg text-gray-100 hover:text-gray-900"
           >
             Produtos

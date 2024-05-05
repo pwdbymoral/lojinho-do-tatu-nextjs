@@ -10,11 +10,16 @@ const meta = {
     product: {
       id: 1,
       name: 'Barraca de Acampamento',
-      price: 75.0,
-      tags: ['Equipamento'],
-      image:
+      price: 75,
+      imageUrl:
         'https://static.wikia.nocookie.net/leagueoflegends/images/6/60/Little_Camper_Emote.png/revision/latest?cb=20180322145141',
-      alt: 'Barraca de Acampamento',
+      altText: 'Barraca de Acampamento',
+      categories: [
+        {
+          id: 2,
+          name: 'Equipamento',
+        },
+      ],
     },
   },
   tags: ['autodocs'],
