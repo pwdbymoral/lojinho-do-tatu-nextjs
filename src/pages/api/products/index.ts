@@ -1,22 +1,14 @@
-// Next.js API route handler for fetching products data
-import products from '../../../data/products.json'; // Import products data from JSON file
-import type { NextApiRequest, NextApiResponse } from 'next';
-import type { Product } from '@/models/product.interface';
+import prisma from '@/libs/db';
+import { NextApiRequest, NextApiResponse } from 'next';
 
-type Products = Product[];
-const productsData: Products = products;
-
-export default function handler(
+export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
-): void {
+) {
   try {
-    // Set response status code to 200 (OK)
-    res.status(200);
-
-    // Send products data as JSON response
-    res.json(productsData);
+    const products = await prisma.product.findMany();
+    res.status(200).json(products);
   } catch (error) {
-    console.log('An error occurred while fetching products data', error);
+    res.status(500).json({ message: 'The products could not be found.' });
   }
 }
