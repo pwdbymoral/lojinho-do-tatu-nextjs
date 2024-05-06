@@ -1,5 +1,5 @@
 import Footer from '@/components/Footer';
-import Navbar from '@/components/Navbar';
+import Header from '@/components/Header';
 import React from 'react';
 
 const ContactForm: React.FC = () => {
@@ -154,7 +154,7 @@ It consists of the following elements:
 const Contato: React.FC = () => {
   return (
     <div>
-      <Navbar />
+      <Header />
       <main className="container mx-auto flex min-h-[calc(100vh-340px)] w-full flex-col items-center justify-center md:min-h-[calc(100vh-260px)]">
         <div className="mx-auto my-4 flex w-10/12 flex-col rounded-md border bg-gray-50 shadow-lg md:min-h-[55vh]">
           <div className="flex h-16 w-full items-center justify-center justify-self-start rounded-t-md bg-green-700 md:h-24">

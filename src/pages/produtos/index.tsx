@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Navbar from '@/components/Navbar';
+import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ProductList from '@/components/ProductList';
 import CategoryFilter from '@/components/CategoryFilter';
@@ -72,7 +72,7 @@ const Products: React.FC = () => {
 
   return (
     <div>
-      <Navbar />
+      <Header />
       <main className="container mx-auto flex min-h-[77vh] flex-col py-4 md:grid md:grid-cols-5 md:divide-x md:divide-gray-400">
         <CategoryFilter
           categories={categories}

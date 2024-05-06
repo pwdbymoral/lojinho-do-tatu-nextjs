@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
-import Navbar from '@/components/Navbar';
+import Header from '@/components/Header';
 import Banner from '@/components/Banner';
 import PopularProducts from '@/components/PopularProducts';
 import SaleProducts from '@/components/SaleProducts';
@@ -46,7 +46,7 @@ const Home: React.FC = () => {
 
   return (
     <main>
-      <Navbar />
+      <Header />
       <Banner />
       <PopularProducts products={products.slice(0, 4)} />
       <SaleProducts products={products.slice(4, 9)} />

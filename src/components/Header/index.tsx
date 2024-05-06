@@ -4,13 +4,13 @@ import Logo from '../../../assets/img/okay emote.webp';
 import Link from 'next/link';
 
 /**
- * Navbar component display website logo, a  link list to all website pages
+ * Header component display website logo, a  link list to all website pages
  * and a SearchBar for products.
  *
  * This uses Next.js Link component for navigation.
  * The SearchBar is a work-in-progress.
  */
-const Navbar: React.FC = () => {
+const Header: React.FC = () => {
   return (
     <div className="bg-primary">
       <div className="container mx-auto flex flex-col items-center justify-center md:flex-row md:justify-between md:px-4">
@@ -52,4 +52,4 @@ const Navbar: React.FC = () => {
   );
 };
 
-export default Navbar;
+export default Header;
