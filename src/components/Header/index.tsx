@@ -4,11 +4,8 @@ import Logo from '../../../assets/img/okay emote.webp';
 import Nav from '../Nav';
 
 /**
- * Header component display website logo, a  link list to all website pages
- * and a SearchBar for products.
- *
- * This uses Next.js Link component for navigation.
- * The SearchBar is a work-in-progress.
+ * Header component displays the Rammus logo with Next Image component,
+ * the navigation bar, and a search bar for searching products (WIP).
  */
 const Header: React.FC = () => {
   return (

@@ -27,6 +27,13 @@ const NavLinks: React.FC = () => {
   );
 };
 
+/**
+ * Nav component is a responsive navigation bar that displays navigation links
+ * horizontally on larger screens and in a vertical mobile menu on smaller
+ * screens.
+ *
+ * This uses Next.js Link component for navigation.
+ */
 const Nav: React.FC = () => {
   const [mobileMenuIsOpen, setMobileMenuIsOpen] = useState(false);
 
