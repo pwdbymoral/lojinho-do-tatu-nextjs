@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import Navbar from '../components/Navbar';
+import Header from '../components/Header';
 import { Controls, Description, Primary, Title } from '@storybook/blocks';
 
 const meta = {
-  title: 'Components/Navbar',
-  component: Navbar,
+  title: 'Components/Header',
+  component: Header,
   tags: ['autodocs'],
   parameters: {
     docs: {
@@ -18,9 +18,9 @@ const meta = {
       ),
     },
   },
-} satisfies Meta<typeof Navbar>;
+} satisfies Meta<typeof Header>;
 
 export default meta;
-type Story = StoryObj<typeof Navbar>;
+type Story = StoryObj<typeof Header>;
 
 export const Default: Story = {};
