@@ -7,19 +7,19 @@ const NavLinks: React.FC = () => {
     <>
       <Link
         href="/"
-        className=" w-full py-2 text-center text-lg text-gray-100 hover:text-gray-900 md:inline"
+        className=" hover:text-accent w-full py-2 text-center text-lg text-neutral-white"
       >
         Home
       </Link>
       <Link
         href="/produtos"
-        className="w-full py-2 text-center text-lg text-gray-100 hover:text-gray-900"
+        className="hover:text-accent w-full py-2 text-center text-lg text-neutral-white"
       >
         Produtos
       </Link>
       <Link
         href="/contato"
-        className="w-full py-2 text-center text-lg text-gray-100 hover:text-gray-900"
+        className="hover:text-accent w-full py-2 text-center text-lg text-neutral-white"
       >
         Contato
       </Link>
@@ -42,12 +42,12 @@ const Nav: React.FC = () => {
   };
   return (
     <>
-      <nav className="flex w-1/3 justify-end">
+      <nav className="flex w-1/3 justify-end lg:w-1/4">
         <div className="hidden w-full justify-between md:flex">
           <NavLinks />
         </div>
         <div className="flex md:hidden">
-          <button onClick={toggleNavbar} className="text-gray-100">
+          <button onClick={toggleNavbar} className="text-neutral-white">
             {mobileMenuIsOpen ? (
               <MenuClose size={28} />
             ) : (

@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import Home from '../pages';
+import HomePage from '../pages';
 import { Controls, Description, Primary, Title } from '@storybook/blocks';
 
 const meta = {
   title: 'Pages/Home',
-  component: Home,
+  component: HomePage,
   tags: ['autodocs'],
   parameters: {
     docs: {
@@ -18,9 +18,9 @@ const meta = {
       ),
     },
   },
-} satisfies Meta<typeof Home>;
+} satisfies Meta<typeof HomePage>;
 
 export default meta;
-type Story = StoryObj<typeof Home>;
+type Story = StoryObj<typeof HomePage>;
 
 export const Default: Story = {};

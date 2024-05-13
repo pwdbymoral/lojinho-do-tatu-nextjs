@@ -17,7 +17,7 @@ const ContactForm: React.FC = () => {
           name="name"
           id="name"
           placeholder="Digite seu nome"
-          className="mt-1 block w-full rounded-md border-gray-300 bg-slate-200 px-1 py-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+          className="mt-1 block w-full rounded-md border-gray-300 bg-neutral-200 px-1 py-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
         />
       </div>
       <div className="p-2">
@@ -32,7 +32,7 @@ const ContactForm: React.FC = () => {
           name="email"
           id="email"
           placeholder="seuemail@provedor.com"
-          className="mt-1 block w-full rounded-md border-gray-300 bg-slate-200 px-1 py-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+          className="mt-1 block w-full rounded-md border-gray-300 bg-neutral-200 px-1 py-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
         />
       </div>
       <div className="p-2">
@@ -47,13 +47,13 @@ const ContactForm: React.FC = () => {
           id="message"
           placeholder="Digite sua mensagem"
           rows={4}
-          className="mt-1 block w-full rounded-md border-gray-300 bg-slate-200 px-1 py-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+          className="mt-1 block w-full rounded-md border-gray-300 bg-neutral-200 px-1 py-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
         />
       </div>
       <div className="px-4 py-3 text-right sm:px-6">
         <button
           type="submit"
-          className="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+          className="bg-accent inline-flex justify-center rounded-md border border-transparent px-4 py-2 text-sm font-medium text-neutral-black shadow-sm hover:bg-primary focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
         >
           Enviar
         </button>
@@ -157,12 +157,12 @@ const Contato: React.FC = () => {
       <Header />
       <main className="container mx-auto flex min-h-[calc(100vh-340px)] w-full flex-col items-center justify-center md:min-h-[calc(100vh-260px)]">
         <div className="mx-auto my-4 flex w-10/12 flex-col rounded-md border bg-gray-50 shadow-lg md:min-h-[55vh]">
-          <div className="flex h-16 w-full items-center justify-center justify-self-start rounded-t-md bg-green-700 md:h-24">
+          <div className="flex h-16 w-full items-center justify-center justify-self-start rounded-t-md bg-primary md:h-24">
             <h2 className="text-2xl font-semibold text-white">Fale conosco</h2>
           </div>
           <div className="flex w-full grow flex-col divide-y divide-primary p-2 md:flex-row md:space-x-2 md:divide-x md:divide-y-0">
             <div className="flex flex-col justify-center md:w-10/12">
-              <h3 className="px-2 text-lg font-bold text-green-600">
+              <h3 className="px-2 text-lg font-bold text-primary">
                 Envie-nos uma mensagem:
               </h3>
               <ContactForm />

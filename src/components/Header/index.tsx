@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import Logo from '../../../assets/img/okay emote.webp';
 import Nav from '../Nav';
+import SearchBar from '../SearchBar';
 
 /**
  * Header component displays the Rammus logo with Next Image component,
@@ -14,13 +15,7 @@ const Header: React.FC = () => {
         <Image src={Logo} alt="Rammus Logo" className="h-28 w-auto" />
         <Nav />
       </div>
-
-      <div className="container mx-auto mt-4 px-8 pb-4">
-        <input
-          className="w-full rounded-lg px-4 py-2"
-          placeholder="O que você está buscando?"
-        />
-      </div>
+      <SearchBar />
     </div>
   );
 };
