@@ -4,7 +4,6 @@ import Banner from '@/components/Banner';
 import PopularProducts from '@/components/PopularProducts';
 import SaleProducts from '@/components/SaleProducts';
 import type { Product } from '@/models/product.interface';
-import CategoryShowcase from '@/components/CategoryShowcase';
 
 /**
  * The Homepage component serves as the main entry point for the application.
@@ -46,7 +45,6 @@ const HomePage: React.FC = () => {
   return (
     <main>
       <Banner />
-      <CategoryShowcase />
       <PopularProducts products={products.slice(0, 4)} />
       <SaleProducts products={products.slice(4, 9)} />
 
