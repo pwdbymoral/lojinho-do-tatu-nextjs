@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 import ProductList from '@/components/ProductList';
 import CategoryFilter from '@/components/CategoryFilter';
 import type { Product } from '@/models/product.interface';
@@ -71,18 +69,14 @@ const Products: React.FC = () => {
   const filteredProducts = filterProducts(products, selectedCategory);
 
   return (
-    <div>
-      <Header />
-      <main className="container mx-auto flex min-h-[77vh] flex-col py-4 md:grid md:grid-cols-5 md:divide-x md:divide-gray-400">
-        <CategoryFilter
-          categories={categories}
-          selectedCategory={selectedCategory}
-          onCategoryClick={handleCategoryClick}
-        />
+    <div className="container mx-auto flex min-h-[77vh] flex-col py-4 md:grid md:grid-cols-5 md:divide-x md:divide-gray-400">
+      <CategoryFilter
+        categories={categories}
+        selectedCategory={selectedCategory}
+        onCategoryClick={handleCategoryClick}
+      />
 
-        <ProductList products={filteredProducts} />
-      </main>
-      <Footer />
+      <ProductList products={filteredProducts} />
     </div>
   );
 };

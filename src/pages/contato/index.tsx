@@ -1,5 +1,3 @@
-import Footer from '@/components/Footer';
-import Header from '@/components/Header';
 import React from 'react';
 
 const ContactForm: React.FC = () => {
@@ -53,7 +51,7 @@ const ContactForm: React.FC = () => {
       <div className="px-4 py-3 text-right sm:px-6">
         <button
           type="submit"
-          className="bg-accent inline-flex justify-center rounded-md border border-transparent px-4 py-2 text-sm font-medium text-neutral-black shadow-sm hover:bg-primary focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+          className="inline-flex justify-center rounded-md border border-transparent bg-accent px-4 py-2 text-sm font-medium text-neutral-black shadow-sm hover:bg-primary focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
         >
           Enviar
         </button>
@@ -151,10 +149,9 @@ It consists of the following elements:
 - ContactInfo: Displays the store address, phone number and email.
 - Footer component
  */
-const Contato: React.FC = () => {
+const ContatoPage: React.FC = () => {
   return (
     <div>
-      <Header />
       <main className="container mx-auto flex min-h-[calc(100vh-340px)] w-full flex-col items-center justify-center md:min-h-[calc(100vh-260px)]">
         <div className="mx-auto my-4 flex w-10/12 flex-col rounded-md border bg-gray-50 shadow-lg md:min-h-[55vh]">
           <div className="flex h-16 w-full items-center justify-center justify-self-start rounded-t-md bg-primary md:h-24">
@@ -173,9 +170,8 @@ const Contato: React.FC = () => {
           </div>
         </div>
       </main>
-      <Footer />
     </div>
   );
 };
 
-export default Contato;
+export default ContatoPage;

@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import Contato from '@/pages/contato';
+import ContatoPage from '@/pages/contato';
 import { Controls, Description, Primary, Title } from '@storybook/blocks';
 const meta = {
   title: 'Pages/Contato',
-  component: Contato,
+  component: ContatoPage,
   tags: ['autodocs'],
   parameters: {
     docs: {
@@ -17,9 +17,9 @@ const meta = {
       ),
     },
   },
-} satisfies Meta<typeof Contato>;
+} satisfies Meta<typeof ContatoPage>;
 
 export default meta;
-type Story = StoryObj<typeof Contato>;
+type Story = StoryObj<typeof ContatoPage>;
 
 export const Default: Story = {};
