@@ -1,5 +1,5 @@
 import React from 'react';
-import RammusFooter from '@/../assets/img/rammus footer.png';
+import RammusIcon from '../../../public/icon_rammus.png';
 import Image from 'next/image';
 import { Category } from '@/models/category.interface';
 
@@ -31,7 +31,7 @@ const CategoryFilter: React.FC<CategoryFilterProps> = ({
   return (
     <section className="mx-8 flex max-w-md flex-col items-center p-4 md:mx-0 md:max-w-none lg:mr-4">
       <Image
-        src={RammusFooter}
+        src={RammusIcon}
         alt="Rammus"
         width={200}
         className="hidden pb-2 pr-2 md:block"
