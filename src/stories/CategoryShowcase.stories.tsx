@@ -13,8 +13,8 @@ const meta = {
         <>
           <Title />
           <Description />
-          <Primary />
           <Controls />
+          <Primary />
         </>
       ),
     },

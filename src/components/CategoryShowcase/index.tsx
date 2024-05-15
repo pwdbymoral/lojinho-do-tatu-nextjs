@@ -31,18 +31,18 @@ const CategoryBanner: React.FC<CategoryBannerProps> = ({ data }) => {
 };
 
 interface CategoryShowcaseProps {
+  /**
+   * An array of category data objects, containing category name and image URL.
+   */
   categories: CategoryData[];
 }
 
 /**
- * Renders a category showcase component which displays four category banners.
- *
- * The component is composed of four category banners which are displayed in a grid.
- * Each category banner has its name and a link to the respective category page.
+ * Renders a showcase of categories in a grid layout.
  */
 const CategoryShowcase: React.FC<CategoryShowcaseProps> = ({ categories }) => {
   return (
-    <div className="container mx-auto my-4 grid grid-cols-3 gap-4 px-4">
+    <div className="container mx-auto my-8 grid grid-cols-3 gap-4 px-4">
       {categories.map((category, index) => (
         <div
           key={category.url}
