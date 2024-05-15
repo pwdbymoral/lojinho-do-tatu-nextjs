@@ -77,7 +77,7 @@ const Products: React.FC = () => {
         <title>Produtos - Lojinho do Tatu</title>
       </Head>
       <Header />
-      <div className="container mx-auto flex min-h-[77vh] flex-col py-4 md:grid md:grid-cols-5 md:divide-x md:divide-gray-400">
+      <div className="container mx-auto flex min-h-[calc(100vh-252px)] flex-col py-4 md:grid md:grid-cols-5 md:divide-x md:divide-gray-400">
         <CategoryFilter
           categories={categories}
           selectedCategory={selectedCategory}

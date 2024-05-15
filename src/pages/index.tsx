@@ -51,17 +51,19 @@ const HomePage: React.FC = () => {
         <title>Os melhores produtos de Runeterra - Lojinho do Tatu</title>
       </Head>
       <Header />
-      <HeroBanner />
-      <CategoryShowcase categories={categoriesData} />
-      <div className="my-4">
-        <PopularProducts products={products.slice(0, 4)} />
-        <SaleProducts products={products.slice(4, 9)} />
-      </div>
+      <div className="min-h-[calc(100vh-252px)]">
+        <HeroBanner />
+        <CategoryShowcase categories={categoriesData} />
+        <div className="my-4">
+          <PopularProducts products={products.slice(0, 4)} />
+          <SaleProducts products={products.slice(4, 9)} />
+        </div>
 
-      <div className="container mx-auto my-4 flex justify-center">
-        <Button>
-          <Link href="/produtos">Veja todos os produtos</Link>
-        </Button>
+        <div className="container mx-auto my-4 flex justify-center">
+          <Button>
+            <Link href="/produtos">Veja todos os produtos</Link>
+          </Button>
+        </div>
       </div>
       <Footer />
     </>

@@ -155,7 +155,7 @@ const ContatoPage: React.FC = () => {
         <title>Entre em contato conosco - Lojinho do Tatu</title>
       </Head>
       <Header />
-      <main className="container mx-auto flex min-h-[calc(100vh-340px)] w-full flex-col items-center justify-center md:min-h-[calc(100vh-260px)]">
+      <main className="container mx-auto flex w-full flex-col items-center justify-center md:min-h-[calc(100vh-252px)]">
         <div className="mx-auto my-4 flex w-10/12 flex-col rounded-md border bg-gray-50 shadow-lg md:min-h-[55vh]">
           <div className="flex h-16 w-full items-center justify-center justify-self-start rounded-t-md bg-primary md:h-24">
             <h2 className="text-2xl font-semibold text-white">Fale conosco</h2>
