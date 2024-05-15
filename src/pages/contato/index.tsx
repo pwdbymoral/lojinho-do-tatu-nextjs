@@ -1,3 +1,4 @@
+import Button from '@/components/Button';
 import React from 'react';
 
 const ContactForm: React.FC = () => {
@@ -49,12 +50,7 @@ const ContactForm: React.FC = () => {
         />
       </div>
       <div className="px-4 py-3 text-right sm:px-6">
-        <button
-          type="submit"
-          className="inline-flex justify-center rounded-md border border-transparent bg-accent px-4 py-2 text-sm font-medium text-neutral-black shadow-sm hover:bg-primary focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-        >
-          Enviar
-        </button>
+        <Button>Enviar</Button>
       </div>
     </form>
   );

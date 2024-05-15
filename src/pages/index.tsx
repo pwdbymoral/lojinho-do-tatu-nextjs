@@ -6,6 +6,7 @@ import SaleProducts from '@/components/SaleProducts';
 import type { Product } from '@/models/product.interface';
 import CategoryShowcase from '@/components/CategoryShowcase';
 import type { CategoryData } from '@/models/categoryData.interface';
+import Button from '@/components/Button';
 
 /**
  * The Homepage component serves as the main entry point for the application.
@@ -55,16 +56,15 @@ const HomePage: React.FC = () => {
     <main>
       <Banner />
       <CategoryShowcase categories={categoriesData} />
-      <PopularProducts products={products.slice(0, 4)} />
-      <SaleProducts products={products.slice(4, 9)} />
+      <div className="my-4">
+        <PopularProducts products={products.slice(0, 4)} />
+        <SaleProducts products={products.slice(4, 9)} />
+      </div>
 
       <div className="container mx-auto my-4 flex justify-center">
-        <button
-          type="button"
-          className="button text-md rounded-full bg-primary px-4 py-2 text-neutral-white md:hover:bg-accent"
-        >
+        <Button>
           <Link href="/produtos">Veja todos os produtos</Link>
-        </button>
+        </Button>
       </div>
     </main>
   );
