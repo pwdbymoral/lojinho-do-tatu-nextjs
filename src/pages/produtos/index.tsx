@@ -3,6 +3,9 @@ import ProductList from '@/components/ProductList';
 import CategoryFilter from '@/components/CategoryFilter';
 import type { Product } from '@/models/product.interface';
 import { Category } from '@/models/category.interface';
+import Footer from '@/components/Footer';
+import Header from '@/components/Header';
+import Head from 'next/head';
 
 const filterProducts = (
   products: Product[],
@@ -69,15 +72,22 @@ const Products: React.FC = () => {
   const filteredProducts = filterProducts(products, selectedCategory);
 
   return (
-    <div className="container mx-auto flex min-h-[77vh] flex-col py-4 md:grid md:grid-cols-5 md:divide-x md:divide-gray-400">
-      <CategoryFilter
-        categories={categories}
-        selectedCategory={selectedCategory}
-        onCategoryClick={handleCategoryClick}
-      />
+    <>
+      <Head>
+        <title>Produtos - Lojinho do Tatu</title>
+      </Head>
+      <Header />
+      <div className="container mx-auto flex min-h-[77vh] flex-col py-4 md:grid md:grid-cols-5 md:divide-x md:divide-gray-400">
+        <CategoryFilter
+          categories={categories}
+          selectedCategory={selectedCategory}
+          onCategoryClick={handleCategoryClick}
+        />
 
-      <ProductList products={filteredProducts} />
-    </div>
+        <ProductList products={filteredProducts} />
+      </div>
+      <Footer />
+    </>
   );
 };
 

@@ -7,6 +7,9 @@ import type { Product } from '@/models/product.interface';
 import CategoryShowcase from '@/components/CategoryShowcase';
 import type { CategoryData } from '@/models/categoryData.interface';
 import Button from '@/components/Button';
+import Head from 'next/head';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 /**
  * Homepage component serves as the main entry point for the application.
@@ -43,7 +46,11 @@ const HomePage: React.FC = () => {
   ];
 
   return (
-    <main>
+    <>
+      <Head>
+        <title>Os melhores produtos de Runeterra - Lojinho do Tatu</title>
+      </Head>
+      <Header />
       <HeroBanner />
       <CategoryShowcase categories={categoriesData} />
       <div className="my-4">
@@ -56,7 +63,8 @@ const HomePage: React.FC = () => {
           <Link href="/produtos">Veja todos os produtos</Link>
         </Button>
       </div>
-    </main>
+      <Footer />
+    </>
   );
 };
 
