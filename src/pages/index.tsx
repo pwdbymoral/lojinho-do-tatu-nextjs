@@ -9,19 +9,9 @@ import type { CategoryData } from '@/models/categoryData.interface';
 import Button from '@/components/Button';
 
 /**
- * The Homepage component serves as the main entry point for the application.
- *
- * It displays the following elements:
- *  - Navbar component
- *  - HeroBanner component
- *  - Popular Products: Displays a section showcasing 4 popular products using the PopularProducts component.
- *  - Sale Products: Displays a section showcasing 4 sale products using the SaleProducts component.
- *  - "Veja todos os produtos" button:  This button links users to the '/produtos' page to view all products.
- *  - Footer component
- *
- * The Homepage component fetches product data from the '/api/products' endpoint using the useEffect hook.
- * In case of errors, it logs them to the console.
- *
+ * Homepage component serves as the main entry point for the application.
+ * It fetches products data from the server and displays them on the page using various components.
+ * It also includes a hero banner, popular products, sale products, and category showcase.
  */
 const HomePage: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
