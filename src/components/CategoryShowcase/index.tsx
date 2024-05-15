@@ -18,7 +18,7 @@ const CategoryBanner: React.FC<CategoryBannerProps> = ({ data }) => {
   return (
     <div
       style={{ backgroundImage: `url(${url})` }}
-      className="relative h-[660px] bg-cover bg-center"
+      className="relative h-96 bg-cover bg-center md:h-[660px]"
     >
       <div className="absolute left-4 top-4">
         <p className="text-xl font-semibold text-primary">{name}</p>
@@ -42,11 +42,11 @@ interface CategoryShowcaseProps {
  */
 const CategoryShowcase: React.FC<CategoryShowcaseProps> = ({ categories }) => {
   return (
-    <div className="container mx-auto my-8 grid grid-cols-3 gap-4 px-4">
+    <div className="container mx-auto my-8 grid grid-cols-1 gap-4 px-4 md:grid-cols-3">
       {categories.map((category, index) => (
         <div
           key={category.url}
-          className={index === 0 || index === 3 ? 'col-span-2' : ''}
+          className={index === 0 || index === 3 ? 'md:col-span-2' : ''}
         >
           <CategoryBanner data={category} />
         </div>
