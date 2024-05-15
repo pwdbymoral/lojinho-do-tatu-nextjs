@@ -5,6 +5,7 @@ import PopularProducts from '@/components/PopularProducts';
 import SaleProducts from '@/components/SaleProducts';
 import type { Product } from '@/models/product.interface';
 import CategoryShowcase from '@/components/CategoryShowcase';
+import type { CategoryData } from '@/models/categoryData.interface';
 
 /**
  * The Homepage component serves as the main entry point for the application.
@@ -43,10 +44,17 @@ const HomePage: React.FC = () => {
       });
   }, []);
 
+  const categoriesData: CategoryData[] = [
+    { name: 'Presentes', url: '/CategoryBanners/banner_presentes.png' },
+    { name: 'Acessórios', url: '/CategoryBanners/banner_acessorios.png' },
+    { name: 'Equipamentos', url: '/CategoryBanners/banner_equipamentos.png' },
+    { name: 'Decoração', url: '/CategoryBanners/banner_decoracao.png' },
+  ];
+
   return (
     <main>
       <Banner />
-      <CategoryShowcase />
+      <CategoryShowcase categories={categoriesData} />
       <PopularProducts products={products.slice(0, 4)} />
       <SaleProducts products={products.slice(4, 9)} />
 
