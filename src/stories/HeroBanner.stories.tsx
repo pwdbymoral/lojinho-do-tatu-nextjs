@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import Banner from '../components/Banner';
+import HeroBanner from '../components/HeroBanner';
 import { Controls, Description, Primary, Title } from '@storybook/blocks';
 
-const meta: Meta<typeof Banner> = {
-  title: 'Components/Banner',
-  component: Banner,
+const meta: Meta<typeof HeroBanner> = {
+  title: 'Components/HeroBanner',
+  component: HeroBanner,
   tags: ['autodocs'],
   parameters: {
     docs: {

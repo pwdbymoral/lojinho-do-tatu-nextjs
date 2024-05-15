@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
-import Banner from '@/components/Banner';
+import HeroBanner from '@/components/HeroBanner';
 import PopularProducts from '@/components/PopularProducts';
 import SaleProducts from '@/components/SaleProducts';
 import type { Product } from '@/models/product.interface';
@@ -13,7 +13,7 @@ import Button from '@/components/Button';
  *
  * It displays the following elements:
  *  - Navbar component
- *  - Banner component
+ *  - HeroBanner component
  *  - Popular Products: Displays a section showcasing 4 popular products using the PopularProducts component.
  *  - Sale Products: Displays a section showcasing 4 sale products using the SaleProducts component.
  *  - "Veja todos os produtos" button:  This button links users to the '/produtos' page to view all products.
@@ -54,7 +54,7 @@ const HomePage: React.FC = () => {
 
   return (
     <main>
-      <Banner />
+      <HeroBanner />
       <CategoryShowcase categories={categoriesData} />
       <div className="my-4">
         <PopularProducts products={products.slice(0, 4)} />
