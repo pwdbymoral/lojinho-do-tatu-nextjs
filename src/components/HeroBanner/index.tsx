@@ -8,7 +8,7 @@ const HeroBanner: React.FC = () => {
 
   return (
     <div
-      className="flex h-[300px] items-end bg-cover bg-local bg-center bg-no-repeat bg-origin-border"
+      className="mb-8 flex h-[300px] items-end bg-cover bg-local bg-center bg-no-repeat bg-origin-border"
       style={{ backgroundImage: `url(${backgroundImageUrl})` }}
     >
       <div className="flex h-3/4 w-full items-end bg-gradient-to-b from-transparent to-gray-800">
