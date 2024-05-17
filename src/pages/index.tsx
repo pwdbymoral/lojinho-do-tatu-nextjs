@@ -10,6 +10,7 @@ import Button from '@/components/Button';
 import Head from 'next/head';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import CategoryCarousel from '@/components/CategoryCarousel';
 
 /**
  * Homepage component serves as the main entry point for the application.
@@ -54,6 +55,8 @@ const HomePage: React.FC = () => {
       <div className="min-h-[calc(100vh-252px)]">
         <HeroBanner />
         <CategoryShowcase categories={categoriesData} />
+        <CategoryCarousel categories={categoriesData} />
+
         <div className="my-4">
           <PopularProducts products={products.slice(0, 4)} />
           <SaleProducts products={products.slice(4, 9)} />
