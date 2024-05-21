@@ -3,6 +3,9 @@ import ProductList from '@/components/ProductList';
 import CategoryFilter from '@/components/CategoryFilter';
 import type { Product } from '@/models/product.interface';
 import { Category } from '@/models/category.interface';
+import Footer from '@/components/Footer';
+import Header from '@/components/Header';
+import Head from 'next/head';
 
 const filterProducts = (
   products: Product[],
@@ -35,7 +38,7 @@ const filterProducts = (
  */
 const Products: React.FC = () => {
   const [categories, setCategories] = useState<Category[]>([]);
-  const [selectedCategory, setselectedCategory] =
+  const [selectedCategory, setSelectedCategory] =
     useState<string>('Todos os Produtos');
   const [products, setProducts] = useState<Product[]>([]);
 
@@ -63,21 +66,28 @@ const Products: React.FC = () => {
   }, []);
 
   const handleCategoryClick = (category: string): void => {
-    setselectedCategory(category);
+    setSelectedCategory(category);
   };
 
   const filteredProducts = filterProducts(products, selectedCategory);
 
   return (
-    <div className="container mx-auto flex min-h-[77vh] flex-col py-4 md:grid md:grid-cols-5 md:divide-x md:divide-gray-400">
-      <CategoryFilter
-        categories={categories}
-        selectedCategory={selectedCategory}
-        onCategoryClick={handleCategoryClick}
-      />
+    <>
+      <Head>
+        <title>Produtos - Lojinho do Tatu</title>
+      </Head>
+      <Header />
+      <div className="container mx-auto flex min-h-[calc(100vh-252px)] flex-col py-4 lg:grid lg:grid-cols-5 lg:divide-x lg:divide-gray-400">
+        <CategoryFilter
+          categories={categories}
+          selectedCategory={selectedCategory}
+          onCategoryClick={handleCategoryClick}
+        />
 
-      <ProductList products={filteredProducts} />
-    </div>
+        <ProductList products={filteredProducts} />
+      </div>
+      <Footer />
+    </>
   );
 };
 

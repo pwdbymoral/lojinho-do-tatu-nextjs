@@ -1,14 +1,15 @@
 import React from 'react';
 
-/** Displays a hero image with text overlay. */
-const Banner: React.FC = () => {
-  const bannerurl =
-    'https://i.pinimg.com/564x/a7/bc/da/a7bcda822f7d1ca55f1ec88a1bcf90ee.jpg';
+/**
+ * Renders a hero banner component with background image and text overlay.
+ */
+const HeroBanner: React.FC = () => {
+  const backgroundImageUrl = '/banner.jpg';
 
   return (
     <div
-      className="flex h-[300px] items-end bg-cover bg-local bg-center bg-no-repeat bg-origin-border"
-      style={{ backgroundImage: `url(${bannerurl})` }}
+      className="mb-8 flex h-[300px] items-end bg-cover bg-local bg-center bg-no-repeat bg-origin-border"
+      style={{ backgroundImage: `url(${backgroundImageUrl})` }}
     >
       <div className="flex h-3/4 w-full items-end bg-gradient-to-b from-transparent to-gray-800">
         <div className="container mx-auto px-4 py-4">
@@ -24,4 +25,4 @@ const Banner: React.FC = () => {
   );
 };
 
-export default Banner;
+export default HeroBanner;

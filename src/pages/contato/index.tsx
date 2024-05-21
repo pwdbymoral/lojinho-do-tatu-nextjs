@@ -1,4 +1,8 @@
+import Button from '@/components/Button';
 import React from 'react';
+import Head from 'next/head';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 const ContactForm: React.FC = () => {
   return (
@@ -49,12 +53,7 @@ const ContactForm: React.FC = () => {
         />
       </div>
       <div className="px-4 py-3 text-right sm:px-6">
-        <button
-          type="submit"
-          className="inline-flex justify-center rounded-md border border-transparent bg-accent px-4 py-2 text-sm font-medium text-neutral-black shadow-sm hover:bg-primary focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-        >
-          Enviar
-        </button>
+        <Button>Enviar</Button>
       </div>
     </form>
   );
@@ -151,8 +150,12 @@ It consists of the following elements:
  */
 const ContatoPage: React.FC = () => {
   return (
-    <div>
-      <main className="container mx-auto flex min-h-[calc(100vh-340px)] w-full flex-col items-center justify-center md:min-h-[calc(100vh-260px)]">
+    <>
+      <Head>
+        <title>Entre em contato conosco - Lojinho do Tatu</title>
+      </Head>
+      <Header />
+      <main className="container mx-auto flex w-full flex-col items-center justify-center md:min-h-[calc(100vh-252px)]">
         <div className="mx-auto my-4 flex w-10/12 flex-col rounded-md border bg-gray-50 shadow-lg md:min-h-[55vh]">
           <div className="flex h-16 w-full items-center justify-center justify-self-start rounded-t-md bg-primary md:h-24">
             <h2 className="text-2xl font-semibold text-white">Fale conosco</h2>
@@ -170,7 +173,8 @@ const ContatoPage: React.FC = () => {
           </div>
         </div>
       </main>
-    </div>
+      <Footer />
+    </>
   );
 };
 

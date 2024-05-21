@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
   return (
     <footer className="bg-primary py-4 text-center">
       <p className="mt-3 text-neutral-white">
-        &copy; 2023 -{' '}
+        &copy; {new Date().getFullYear()} -{' '}
         <Link
           className="lg:hover:underline"
           target="_blank"

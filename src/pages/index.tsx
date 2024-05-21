@@ -1,25 +1,21 @@
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
-import Banner from '@/components/Banner';
+import HeroBanner from '@/components/HeroBanner';
 import PopularProducts from '@/components/PopularProducts';
 import SaleProducts from '@/components/SaleProducts';
 import type { Product } from '@/models/product.interface';
 import CategoryShowcase from '@/components/CategoryShowcase';
+import type { CategoryData } from '@/models/categoryData.interface';
+import Button from '@/components/Button';
+import Head from 'next/head';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import CategoryCarousel from '@/components/CategoryCarousel';
 
 /**
- * The Homepage component serves as the main entry point for the application.
- *
- * It displays the following elements:
- *  - Navbar component
- *  - Banner component
- *  - Popular Products: Displays a section showcasing 4 popular products using the PopularProducts component.
- *  - Sale Products: Displays a section showcasing 4 sale products using the SaleProducts component.
- *  - "Veja todos os produtos" button:  This button links users to the '/produtos' page to view all products.
- *  - Footer component
- *
- * The Homepage component fetches product data from the '/api/products' endpoint using the useEffect hook.
- * In case of errors, it logs them to the console.
- *
+ * Homepage component serves as the main entry point for the application.
+ * It fetches products data from the server and displays them on the page using various components.
+ * It also includes a hero banner, popular products, sale products, and category showcase.
  */
 const HomePage: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -43,22 +39,37 @@ const HomePage: React.FC = () => {
       });
   }, []);
 
-  return (
-    <main>
-      <Banner />
-      <CategoryShowcase />
-      <PopularProducts products={products.slice(0, 4)} />
-      <SaleProducts products={products.slice(4, 9)} />
+  const categoriesData: CategoryData[] = [
+    { name: 'Presentes', url: '/CategoryBanners/banner_presentes.png' },
+    { name: 'Acessórios', url: '/CategoryBanners/banner_acessorios.png' },
+    { name: 'Equipamentos', url: '/CategoryBanners/banner_equipamentos.png' },
+    { name: 'Decoração', url: '/CategoryBanners/banner_decoracao.png' },
+  ];
 
-      <div className="container mx-auto flex justify-center">
-        <button
-          type="button"
-          className="button text-md mb-4 rounded-full bg-primary px-4 py-2 text-neutral-white md:hover:bg-accent"
-        >
-          <Link href="/produtos">Veja todos os produtos</Link>
-        </button>
+  return (
+    <>
+      <Head>
+        <title>Os melhores produtos de Runeterra - Lojinho do Tatu</title>
+      </Head>
+      <Header />
+      <div className="min-h-[calc(100vh-252px)]">
+        <HeroBanner />
+        <CategoryShowcase categories={categoriesData} />
+        <CategoryCarousel categories={categoriesData} />
+
+        <div className="my-4">
+          <PopularProducts products={products.slice(0, 4)} />
+          <SaleProducts products={products.slice(4, 9)} />
+        </div>
+
+        <div className="container mx-auto my-4 flex justify-center">
+          <Button>
+            <Link href="/produtos">Veja todos os produtos</Link>
+          </Button>
+        </div>
       </div>
-    </main>
+      <Footer />
+    </>
   );
 };
 

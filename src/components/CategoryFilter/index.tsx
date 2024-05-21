@@ -1,7 +1,7 @@
 import React from 'react';
-import RammusFooter from '@/../assets/img/rammus footer.png';
+import RammusIcon from '../../../public/icon_rammus.png';
 import Image from 'next/image';
-import { Category } from '@/models/category.interface';
+import type { Category } from '@/models/category.interface';
 
 interface CategoryFilterProps {
   /** An array of categories */
@@ -29,17 +29,17 @@ const CategoryFilter: React.FC<CategoryFilterProps> = ({
   onCategoryClick,
 }) => {
   return (
-    <section className="mx-8 flex max-w-md flex-col items-center p-4 md:mx-0 md:max-w-none lg:mr-4">
+    <section className="flex w-full flex-col items-center divide-y-2 divide-primary px-8 lg:mx-0 lg:mr-4 lg:max-w-none">
       <Image
-        src={RammusFooter}
+        src={RammusIcon}
         alt="Rammus"
         width={200}
-        className="hidden pb-2 pr-2 md:block"
+        className="hidden lg:block"
       />
-      <h2 className="mb-2 w-full rounded-md bg-primary px-2 py-4 text-lg font-bold text-gray-50">
+      <h2 className="w-full py-2 text-center text-xl font-bold text-primary">
         Categorias
       </h2>
-      <div className="w-full space-y-2 overflow-auto">
+      <div className="mb-2 w-full space-y-2 border-b border-primary pt-2 text-neutral-black">
         <div
           onClick={() => {
             onCategoryClick('Todos os Produtos');
