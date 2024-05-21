@@ -38,7 +38,7 @@ const filterProducts = (
  */
 const Products: React.FC = () => {
   const [categories, setCategories] = useState<Category[]>([]);
-  const [selectedCategory, setselectedCategory] =
+  const [selectedCategory, setSelectedCategory] =
     useState<string>('Todos os Produtos');
   const [products, setProducts] = useState<Product[]>([]);
 
@@ -66,7 +66,7 @@ const Products: React.FC = () => {
   }, []);
 
   const handleCategoryClick = (category: string): void => {
-    setselectedCategory(category);
+    setSelectedCategory(category);
   };
 
   const filteredProducts = filterProducts(products, selectedCategory);
@@ -77,7 +77,7 @@ const Products: React.FC = () => {
         <title>Produtos - Lojinho do Tatu</title>
       </Head>
       <Header />
-      <div className="container mx-auto flex min-h-[calc(100vh-252px)] flex-col py-4 md:grid md:grid-cols-5 md:divide-x md:divide-gray-400">
+      <div className="container mx-auto flex min-h-[calc(100vh-252px)] flex-col py-4 lg:grid lg:grid-cols-5 lg:divide-x lg:divide-gray-400">
         <CategoryFilter
           categories={categories}
           selectedCategory={selectedCategory}
