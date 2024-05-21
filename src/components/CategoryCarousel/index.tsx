@@ -9,7 +9,7 @@ interface CategoryCarouselProps {
 const CategoryCarousel: React.FC<CategoryCarouselProps> = ({ categories }) => {
   return (
     <div className="container mx-auto px-8">
-      <Carousel className="rounded-xl md:hidden">
+      <Carousel className="rounded-xl md:hidden" transition={{ duration: 1 }}>
         {categories.map((category) => (
           <div key={category.url} className="relative h-full w-full">
             <CategoryBanner data={category} />
